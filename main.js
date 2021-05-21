@@ -4,5 +4,7 @@ var app = new Vue({
         product: 'Angel 1',
         image: './images/girl.jpg',
         imageStyle: 'max-width:100%; height:100px;',
+        inventory: 101,
+        best: false,
     },
 });
