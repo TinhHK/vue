@@ -2,7 +2,7 @@ var app = new Vue({
     el : '#app',
     data: {
         product: 'Angel 1',
-        image: './images/girl.jpg',
+        image: './images/girl1.jpg',
         sexyGirl: 'a sexy girl',
         inventory: 101,
         best: false,
@@ -11,17 +11,17 @@ var app = new Vue({
             {
                 variantID: 123,
                 variantColor: 'blue',
-                variantImage: './images/funnya.jpg'
+                variantImage: './images/girl1.jpg'
             },
             {
                 variantID: 124,
                 variantColor: 'green',
-                variantImage: './images/funnya1.jpg'
+                variantImage: './images/girl2.jpg'
             },
             {
                 variantID: 125,
                 variantColor: 'red',
-                variantImage: './images/funnya2.jpg'
+                variantImage: './images/girl3.jpg'
             }
         ],
         cart: 0,

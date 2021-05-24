@@ -13,10 +13,24 @@
 .product-info {
     padding: 10px 20px;
 }
-.p-color {
-    width: 20px;
-    height: 20px;
+.color-box {
+    margin-bottom: 10px;
 }
-.p-color:last-child {
-    background-color: red;
+.p-color {
+    width: 22px;
+    height: 22px;
+    border-radius: 50%;
+    margin-right: 10px;
+    display: inline-block;
+}
+.cart p {
+    background-color: lightgray;
+    padding: 10px;
+}
+.button-save-style {
+    padding: 10px;
+    background-color: lightblue;
+}
+.disable-button {
+    background-color: white;
 }
