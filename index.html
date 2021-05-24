@@ -11,7 +11,7 @@
 <body>
     <div id="app">
         <div class="product">
-            <div>
+            <div class="product-frame">
                 <img class="product-image" :src="image" :alt="sexyGirl">
             </div>
             <div class="product-info">
@@ -23,7 +23,14 @@
                 <ul>
                     <li v-for="detail in details">{{detail}}</li>
                 </ul>
-                <div class="p-color" v-for="variant  in variants" :key="variant.variantID">{{variant.variantColor}}</div>
+                <div class="p-color" v-for="variant  in variants" :key="variant.variantID" @mouseover="updateProduct(variant.variantImage)">{{variant.variantColor}}</div>
+
+                <button v-on:click="addToCard">Add to card</button>
+                <button v-on:click="removeCard">Remove card</button>
+
+                <div class="cart">
+                    <p>Cart({{cart}})</p>
+                </div>
             </div>
         </div>
 
