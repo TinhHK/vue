@@ -5,20 +5,25 @@
     <meta name="viewport"
           content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>Document</title>
+    <title>Vuejs</title>
+    <link rel="stylesheet" href="style.css">
 </head>
 <body>
     <div id="app">
         <div class="product">
-            <div class="product-image">
-                <img :src="image" alt="" :style="imageStyle">
+            <div>
+                <img class="product-image" :src="image" :alt="sexyGirl">
             </div>
-            <div class="product-ìno">
+            <div class="product-info">
                 <h2>{{ product }}</h2>
                 <p v-if="inventory > 10">In stock</p>
                 <p v-else-if="inventory <= 10 && inventory > 0">Almost sold out</p>
                 <p v-else>Out of stock</p>
                 <p v-show="best">Best Selling</p>
+                <ul>
+                    <li v-for="detail in details">{{detail}}</li>
+                </ul>
+                <div class="p-color" v-for="variant  in variants" :key="variant.variantID">{{variant.variantColor}}</div>
             </div>
         </div>
 
