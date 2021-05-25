@@ -37,3 +37,18 @@
 .disable-button {
     background-color: white;
 }
+
+p label {
+    display: inline-block;
+    vertical-align: top;
+    width: 3%;
+}
+
+#name {
+    line-height: 20px;
+}
+#rating {
+    height: 22px;
+    display: inline-block;
+    width: 150px;
+}
