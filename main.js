@@ -32,10 +32,6 @@ Vue.component('product', {
                         class="button-save-style">Add to card
                 </button>
                 <button class="button-save-style" v-on:click="removeCard">Remove card</button>
-
-                <div class="cart">
-                    <p>Cart ({{cart}})</p>
-                </div>
             </div>
         </div>
     `,
@@ -67,17 +63,14 @@ Vue.component('product', {
                     variantQuantity: 10
                 }
             ],
-            cart: 0,
         };
     },
     methods: {
         addToCard: function() {
-            this.cart += 1;
+            this.$emit('add-to-cart', this.variants[this.selectedVariant].variantID);
         },
         removeCard() {
-            if(this.cart > 0) {
-                this.cart -= 1;
-            }
+            this.$emit('remove-cart');
         },
         updateProduct(index) {
             this.selectedVariant = index;
@@ -106,5 +99,14 @@ var app = new Vue({
     el : '#app',
     data: {
         premium: true,
+        cart: [],
+    },
+    methods: {
+        addToCard(productId) {
+            this.cart.push(productId);
+        },
+        removeCard() {
+            this.cart.pop();
+        }
     }
 });
