@@ -114,6 +114,12 @@ Vue.component('product', {
 Vue.component('product-review', {
     template: `
         <form class="review-form" @submit.prevent="onSubmit">
+            <p v-if="errors.length">
+                <b>Please correct the following error(s):</b>
+                <ul v-for="error in errors">
+                    <li>{{error}}</li>
+                </ul>
+            </p>
             <p>
                 <label for="name">Name:</label>
                 <input id="name" v-model="name" placeholder="name">
@@ -148,6 +154,7 @@ Vue.component('product-review', {
     },
     methods: {
         onSubmit() {
+            this.errors = [];
             if(this.name && this.review && this.rating) {
                 let productReview = {
                     name: this.name,
